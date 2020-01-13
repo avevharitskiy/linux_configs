@@ -1,0 +1,23 @@
+# ========================================================================================
+# Oh my zsh config
+# ========================================================================================
+
+# Path to oh-my-zsh installation.
+export ZSH="/home/chessur/.oh-my-zsh"
+
+# ZSH theme
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# ZSH plugins.
+plugins=(git)
+
+# ========================================================================================
+# PowerLevel9k theme settings
+# ========================================================================================
+# Use awesome powerline fonts
+POWERLEVEL9K_MODE="nerdfont-complete"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir_writable dir newline status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
+
+source $ZSH/oh-my-zsh.sh

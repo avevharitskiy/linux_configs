@@ -1,0 +1,38 @@
+" ===================================================================================================
+" Vim plug installation (if necessary)
+" ===================================================================================================
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" ===================================================================================================
+" Plugins
+" ===================================================================================================
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'ycm-core/YouCompleteMe', {'do': 'python3 ./install.py --clang-completer'}
+call plug#end()
+
+" ===================================================================================================
+" Default settings
+" ===================================================================================================
+set number
+syntax on
+set background=dark
+colors gruvbox
+" Tab settings
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
+
+" ===================================================================================================
+" Airline settings
+" ===================================================================================================
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
